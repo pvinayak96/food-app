@@ -1,5 +1,8 @@
+
+import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/pages/billDetails.dart';
 import 'package:flutter_application_1/pages/cartItem.dart';
+import 'package:flutter_application_1/pages/deliveryInstructions.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/cartProvider.dart';
@@ -32,7 +35,43 @@ class _CartState extends State<Cart> {
                         return list[index];
                       })),
                 ),
-                BillDetails(totalCartValue: provider.totalCartValue(), kms: 4.4, deliveryFee: 10, platformFee: 3, GST: 10.54)
+                SizedBox(
+                  child: Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                      child: Text(
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                        ),
+                        'Delivery instructions'),
+                    ),
+                  ),
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: DeliveryInstructions()),
+                SizedBox(
+                  child: Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                      child: Text(
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                        ),
+                        'Bill details'),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  child: Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Card(
+                      color: Colors.white,
+                      child: BillDetails(totalCartValue: provider.totalCartValue(), kms: 4.4, deliveryFee: 10, platformFee: 3, GST: 10.54)),
+                  ),
+                )
               ]),
             );
           },

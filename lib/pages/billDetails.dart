@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dotted_line/dotted_line.dart';
+import 'package:flutter/widgets.dart';
 
 class BillDetails extends StatefulWidget {
   int totalCartValue;
@@ -25,7 +26,7 @@ class _BillDetailsState extends State<BillDetails> {
   Widget build(BuildContext context) {
     return SizedBox(
       child: Padding(
-        padding: const EdgeInsets.all(30.0),
+        padding: const EdgeInsets.all(15.0),
         child: Column(
           children: [
             Row(
@@ -40,11 +41,19 @@ class _BillDetailsState extends State<BillDetails> {
                 Expanded(
                   flex: 1,
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Icon(Icons.currency_rupee),
-                      Text(
-                          style: TextStyle(fontWeight: FontWeight.w500),
-                          '${widget.totalCartValue}'),
+                      Icon(Icons.currency_rupee,),
+                      Expanded(
+                        child: FittedBox(
+                          alignment: Alignment.centerRight,
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                              textAlign: TextAlign.right,
+                              style: TextStyle(fontWeight: FontWeight.w500),
+                              '${widget.totalCartValue}'),
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -62,11 +71,19 @@ class _BillDetailsState extends State<BillDetails> {
                 Expanded(
                   flex: 1,
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Icon(Icons.currency_rupee),
-                      Text(
-                          style: TextStyle(fontWeight: FontWeight.w500),
-                          '${widget.kms * widget.deliveryFee}'),
+                      Expanded(
+                        child: FittedBox(
+                          alignment: Alignment.centerRight,
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                              textAlign: TextAlign.right,
+                              style: TextStyle(fontWeight: FontWeight.w500),
+                              '${widget.kms * widget.deliveryFee}'),
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -75,26 +92,15 @@ class _BillDetailsState extends State<BillDetails> {
             Row(
               children: [
                 Expanded(
-                  child: SizedBox(                    
-                      height: 14,
-                      child: DottedLine(lineThickness: 0.5,
+                  child: SizedBox(
+                    height: 14,
+                    child: DottedLine(
+                      lineThickness: 0.5,
                       dashColor: Colors.black54,
                       dashLength: 0.8,
-                      
-                      ),
+                    ),
                   ),
                 ),
-              ],
-            ),
-            Row(
-              children: [
-                SizedBox(
-                    height: 14,
-                ),
-                Divider(
-                    color: Colors.black38,
-                    thickness: 1,
-                )
               ],
             ),
             Row(
@@ -109,11 +115,19 @@ class _BillDetailsState extends State<BillDetails> {
                 Expanded(
                   flex: 1,
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Icon(Icons.currency_rupee),
-                      Text(
-                          style: TextStyle(fontWeight: FontWeight.w500),
-                          '${widget.platformFee}'),
+                      Expanded(
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          alignment: Alignment.centerRight,
+                          child: Text(
+                            textAlign: TextAlign.right,
+                              style: TextStyle(fontWeight: FontWeight.w500),
+                              '${widget.platformFee}'),
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -131,11 +145,19 @@ class _BillDetailsState extends State<BillDetails> {
                 Expanded(
                   flex: 1,
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Icon(Icons.currency_rupee),
-                      Text(
-                          style: TextStyle(fontWeight: FontWeight.w500),
-                          '${widget.GST}'),
+                      Expanded(
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          alignment: Alignment.centerRight,
+                          child: Text(
+                              textAlign: TextAlign.right,
+                              style: TextStyle(fontWeight: FontWeight.w500),
+                              '${widget.GST}'),
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -144,12 +166,13 @@ class _BillDetailsState extends State<BillDetails> {
             Row(
               children: [
                 Expanded(
-                  child: SizedBox(                    
-                      height: 14,
-                      child: DottedLine(lineThickness: 0.5,
+                  child: SizedBox(
+                    height: 14,
+                    child: DottedLine(
+                      lineThickness: 0.5,
                       dashColor: Colors.black54,
                       dashLength: 0.8,
-                      ),
+                    ),
                   ),
                 ),
               ],
@@ -165,11 +188,19 @@ class _BillDetailsState extends State<BillDetails> {
                 Expanded(
                   flex: 1,
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Icon(Icons.currency_rupee),
-                      Text(
-                          style: TextStyle(fontWeight: FontWeight.w900),
-                          '${widget.GST + (widget.kms * widget.deliveryFee) + widget.totalCartValue + widget.platformFee}'),
+                      Expanded(
+                        child: FittedBox(
+                          alignment: Alignment.centerRight,
+                          fit:BoxFit.scaleDown,
+                          child: Text(
+                              textAlign: TextAlign.right,
+                              style: TextStyle(fontWeight: FontWeight.w900),
+                              '${widget.GST + (widget.kms * widget.deliveryFee) + widget.totalCartValue + widget.platformFee}'),
+                        ),
+                      ),
                     ],
                   ),
                 ),
