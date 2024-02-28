@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/pages/billDetails.dart';
 import 'package:flutter_application_1/pages/cartItem.dart';
 import 'package:flutter_application_1/pages/deliveryInstructions.dart';
+import 'package:flutter_application_1/pages/offersAndBenefits.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/cartProvider.dart';
@@ -35,6 +36,20 @@ class _CartState extends State<Cart> {
                         return list[index];
                       })),
                 ),
+                 SizedBox(
+                  child: Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                      child: Text(
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                        ),
+                        'Offers & benefits'),
+                    ),
+                  ),
+                ),
+                Offers(),
                 SizedBox(
                   child: Align(
                     alignment: Alignment.bottomLeft,

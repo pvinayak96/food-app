@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:dotted_line/dotted_line.dart';
-import 'package:flutter/widgets.dart';
 
 class BillDetails extends StatefulWidget {
   int totalCartValue;
