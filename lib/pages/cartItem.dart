@@ -6,8 +6,9 @@ class CartItem extends StatelessWidget {
    int quantityBought;
    int total;
    String itemName;
+   String itemId;
 
-   CartItem({required this.image,required this.quantityBought,required this.total,required this.itemName});
+   CartItem({required this.image,required this.quantityBought,required this.total,required this.itemName, required this.itemId});
 
   @override
   Widget build(BuildContext context) {

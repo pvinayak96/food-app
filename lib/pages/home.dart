@@ -10,15 +10,14 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State<Home> {
-
-  List<Card> restuarantList = [
-    Card(child: Image(image: AssetImage('assets/res1.png'))),
-    Card(child: Image(image: AssetImage('assets/res2.png'))),
-    Card(child: Image(image: AssetImage('assets/res5.png')))
+  List<String> restuarantList = [
+    'assets/res1.png',
+    'assets/res2.png',
+    'assets/res5.png'
   ];
 
-  List<String> listA = ['res3.png','res4.png','res5.png'];
-  List<String> listB = ['res2.png','res5.png','res1.png'];
+  List<String> listA = ['res3.png', 'res4.png', 'res5.png'];
+  List<String> listB = ['res2.png', 'res5.png', 'res1.png'];
 
   @override
   Widget build(BuildContext context) {
@@ -62,44 +61,50 @@ class HomeState extends State<Home> {
             ],
           ),
         ),
-        body: Column(
-          children: [
-            ListTile(
-              tileColor: Colors.white54,
-              leading: Icon(Icons.local_offer_sharp),
-              title: Text('Some offers'),
-              subtitle: Text('description goes here'),
-            ),
-            Card(
-              child: SizedBox(
-                  height: 100,
-                  width: 500,
-                  child: Carousel(carouselList: restuarantList)),
-            ),
-            Card.outlined(
-              child: Text('IN THE SPOTLIGHT'),
-            ),
-            AdCard(adCardList: listA, height: 120,width: 30, onPressed: (){
-              Navigator.pushNamed(context, '/menu');
-            },),
-            Card(
-              child: Text('QUICK PICKS FOR YOU'),
-            ),
-            AdCard(adCardList: listA, height: 60,width: 30,onPressed: (){
-              Navigator.pushNamed(context, '/menu');
-            }),
-            AdCard(adCardList: listB, height: 60,width: 30,onPressed: (){
-              Navigator.pushNamed(context, '/menu');
-            })
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              ListTile(
+                tileColor: Colors.white54,
+                leading: Icon(Icons.local_offer_sharp),
+                title: Text('Some offers'),
+                subtitle: Text('description goes here'),
+              ),
+              Card(
+                child: SizedBox(
+                    height: 100,
+                    width: 500,
+                    child: Carousel(carouselList: restuarantList)),
+              ),
+              Card.outlined(
+                child: Text('IN THE SPOTLIGHT'),
+              ),
+              AdCard(
+                adCardList: listA,
+                height: 120,
+                onPressed: () {
+                  Navigator.pushNamed(context, '/menu');
+                },
+              ),
+              Card(
+                child: Text('QUICK PICKS FOR YOU'),
+              ),
+              AdCard(
+                  adCardList: listA,
+                  height: 90,
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/menu');
+                  }),
+              AdCard(
+                  adCardList: listB,
+                  height: 80,
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/menu');
+                  })
+            ],
+          ),
         ),
         backgroundColor: Colors.white70,
-        floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.help_center_outlined),
-          onPressed: () {
-            Navigator.pushNamed(context, '/go');
-          },
-        ),
       ),
     );
   }

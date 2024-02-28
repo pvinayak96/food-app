@@ -39,7 +39,7 @@ class OfferCard extends StatelessWidget {
               Expanded(
                 flex: 4,
                 child: Text(
-                    style: TextStyle(fontWeight: FontWeight.w600), "$offerName"),
+                    style: TextStyle(fontWeight: FontWeight.w400), "$offerName"),
               ),
               Expanded(
                 flex: 1,

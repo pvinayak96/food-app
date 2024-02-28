@@ -197,7 +197,7 @@ class _BillDetailsState extends State<BillDetails> {
                           child: Text(
                               textAlign: TextAlign.right,
                               style: TextStyle(fontWeight: FontWeight.w900),
-                              '${widget.GST + (widget.kms * widget.deliveryFee) + widget.totalCartValue + widget.platformFee}'),
+                              '${(widget.GST + (widget.kms * widget.deliveryFee) + widget.totalCartValue + widget.platformFee).round()}'),
                         ),
                       ),
                     ],

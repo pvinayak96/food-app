@@ -4,7 +4,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 
 class Carousel extends StatelessWidget {
 
-  List<Card> carouselList =[];
+  List<String> carouselList =[];
 
   Carousel({required this.carouselList}){
   }   
@@ -16,7 +16,11 @@ class Carousel extends StatelessWidget {
         autoPlayInterval: const Duration(seconds: 3),
         autoPlayAnimationDuration: const Duration(milliseconds: 1600),
         autoPlayCurve: Curves.fastOutSlowIn,),
-        items: carouselList
+        items: [
+    Card(child: Image(image: AssetImage(carouselList[0]))),
+    Card(child: Image(image: AssetImage(carouselList[1]))),
+    Card(child: Image(image: AssetImage(carouselList[2])))
+  ]
       );
     
   }

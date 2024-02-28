@@ -7,12 +7,14 @@ import 'package:provider/provider.dart';
 class DishCard extends StatefulWidget {
 
   String dishName;
+  String dishId;
   String description;
   String image;
   int pricePerUnit;
   int quantity = 0;
 
-  DishCard({required this.dishName,required this.description,required this.image,required this.pricePerUnit}){
+  DishCard({required this.dishName,required this.description,required this.image,
+  required this.pricePerUnit, required this.dishId}){
     
   }
 
@@ -40,33 +42,36 @@ class _DishCardState extends State<DishCard> {
                        style: TextStyle(fontSize: 17),
                       '${widget.pricePerUnit}'),
                       Spacer(),
-                      if(showAddButton)
+                      if(showAddButton && !cartProvider.isItemPresent(widget.dishId))
                       ElevatedButton(onPressed: (){
                         setState(() {
                           cartProvider.add(CartItem(image: widget.image,
                                         itemName: widget.dishName, 
                                         quantityBought: 1,
-                                        total: widget.pricePerUnit, ));
+                                        total: widget.pricePerUnit,
+                                        itemId: widget.dishId, ));
                            this.showAddButton = false;
                         });
                       }, child: Text('Add'))
                       else
                         InputQty.int(
                           steps: 1,
-                          initVal: 1,                    
+                          initVal: cartProvider.quantityBoughtForItem(widget.dishId),                    
                           onQtyChanged: (value) => {
                               widget.quantity = value,
                               cartProvider.add(CartItem(image: widget.image,
                                         itemName: widget.dishName, 
                                         quantityBought: widget.quantity,
-                                        total: widget.quantity * widget.pricePerUnit)),
+                                        total: widget.quantity * widget.pricePerUnit,
+                                        itemId: widget.dishId)),
                               if(value == 0)
                               {setState(() {
                                 this.showAddButton = true;
                                 cartProvider.delete(CartItem(image: widget.image,
                                  quantityBought: widget.quantity,
                                 total: widget.quantity * widget.pricePerUnit, 
-                                itemName: widget.dishName));                                                                                               
+                                itemName: widget.dishName,
+                                itemId: widget.dishId));                                                                                               
                                 }
                               )} 
                           },

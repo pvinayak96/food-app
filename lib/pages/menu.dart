@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/pages/cart.dart';
 import 'package:flutter_application_1/pages/carousel.dart';
 import 'package:flutter_application_1/pages/cartProvider.dart';
 import 'package:flutter_application_1/pages/dishCard.dart';
@@ -12,16 +11,12 @@ class Menu extends StatefulWidget {
 }
 
 class _MenuState extends State<Menu> {
-  List<Card> offersList = [
-    Card(child: Image(image: AssetImage('assets/off1.png'))),
-    Card(child: Image(image: AssetImage('assets/off2.png'))),
-    Card(child: Image(image: AssetImage('assets/off3.png')))
+  List<String> offersList = [
+    'assets/off1.png','assets/off2.png','assets/off3.png'
   ];
 
-  List<Card> topPick = [
-    Card(child: Image(image: AssetImage('assets/img3.png'))),
-    Card(child: Image(image: AssetImage('assets/img4.png'))),
-    Card(child: Image(image: AssetImage('assets/img5.png')))
+  List<String> topPick = [
+    'assets/img3.png','assets/img4.png','assets/img5.png'
   ];
 
   List<DishCard> dishes = [
@@ -29,37 +24,45 @@ class _MenuState extends State<Menu> {
         dishName: 'Pizza',
         description: 'Regular Pizza',
         image: 'img3.png',
-        pricePerUnit: 230),
+        pricePerUnit: 230,
+        dishId: 'D1',),
+        
     DishCard(
         dishName: 'Maggie',
         description: 'Maggie Noodles',
         image: 'img5.png',
-        pricePerUnit: 145),
+        pricePerUnit: 145,
+        dishId: 'D2',),
     DishCard(
-        dishName: 'Noodles',
+        dishName: 'Maggie',
         description: 'Noodles',
         image: 'img6.png',
-        pricePerUnit: 35),
+        pricePerUnit: 35,
+        dishId: 'D3',),
     DishCard(
         dishName: 'Pan Cake',
         description: 'Hot Pan Cake',
         image: 'img4.png',
-        pricePerUnit: 100),
+        pricePerUnit: 100,
+        dishId: 'D4',),
     DishCard(
         dishName: 'Cookies',
         description: '500g cookies packed',
         image: 'img5.png',
-        pricePerUnit: 223),
+        pricePerUnit: 223,
+        dishId: 'D5',),
     DishCard(
         dishName: 'Nuggets',
         description: 'Chicken Nuggets',
         image: 'img7.png',
-        pricePerUnit: 60),
+        pricePerUnit: 60,
+        dishId: 'D6',),
     DishCard(
         dishName: 'Chocolate Lava Cake',
         description: 'Lava Cake',
         image: 'img8.png',
-        pricePerUnit: 125),
+        pricePerUnit: 125,
+        dishId: 'D7',),
   ];
 
   @override
