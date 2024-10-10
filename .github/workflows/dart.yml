@@ -53,5 +53,5 @@ jobs:
              git add .
              git commit -m "deployment to pages"
              git branch gh-pages
-             git remote add origin https://${{ secrets.MY_ACCESS_TOKEN }}@github.com/pvinayak96/food-app.git gh-pages
-             git push
+             git push --force https://${{ secrets.MY_ACCESS_TOKEN }}@github.com/pvinayak96/food-app.git gh-pages
+             
