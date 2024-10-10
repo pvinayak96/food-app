@@ -49,7 +49,7 @@ jobs:
              cd build/web
              git init
              git config user.email "pvinayak96@gmail.com"
-             got config user.name "Vinayak P"
+             git config user.name "Vinayak P"
              git add .
              git commit -m "deployment to pages"
              git branch gh-pages
