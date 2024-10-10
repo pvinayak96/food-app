@@ -26,7 +26,7 @@ jobs:
       - name: install flutter
         run: curl -fsSL https://flutter.dev/sdk/flutter.zip -o flutter.zip 
              unzip -q flutter.zip
-             export PATH='pwd'/flutter/bin:$PATH
+             export PATH=`pwd`/flutter/bin:$PATH
              flutter config --enable-web
       - name: Install dependencies
         run: flutter pub get
