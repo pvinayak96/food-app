@@ -45,7 +45,8 @@ jobs:
       # package:test for this step to succeed. Note that Flutter projects will
       # want to change this to 'flutter test'.
       - name: Deploy to pages
-        run: cd build/web
+        run: |
+             cd build/web
              git init
              git add .
              git commit -m "deployment to pages"
