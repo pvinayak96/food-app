@@ -52,6 +52,7 @@ jobs:
              git config user.name "Vinayak P"
              git add .
              git commit -m "deployment to pages"
+             git remote set-url origin https://pvinayak96:${{ secrets.MY_ACCESS_TOKEN }}@github.com/pvinayak96/food-app.git
              git branch gh-pages
-             git push --force https://pvinayak96:${{ secrets.MY_ACCESS_TOKEN }}@github.com/pvinayak96/food-app.git gh-pages
+             git push
              
