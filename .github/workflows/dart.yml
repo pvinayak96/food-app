@@ -52,7 +52,7 @@ jobs:
              git config user.name "Vinayak P"
              git add .
              git commit -m "deployment to pages"
-             git clone https://pvinayak96:${{secrets.MY_TOKEN}}@github.com/pvinayak96/food-app.git
+             git remote add origin https://pvinayak96:${{secrets.MY_TOKEN}}@github.com/pvinayak96/food-app.git
              git pull origin master
              git checkout gh-pages
              git push
