@@ -49,5 +49,5 @@ jobs:
              git init
              git add .
              git commit -m "deployment to pages"
-             git branch -m main gh-pages
+             git branch gh-pages
              git push --force --quiet https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git gh-pages
