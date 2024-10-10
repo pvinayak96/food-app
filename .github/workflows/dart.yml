@@ -53,7 +53,7 @@ jobs:
              git add .
              git commit -m "deployment to pages"
              git remote add origin https://pvinayak96:${{secrets.MY_TOKEN}}@github.com/pvinayak96/food-app.git
-             git pull origin/gh-pages
+             git pull gh-pages
              git branch gh-pages
              git checkout gh-pages
              git push -u origin gh-pages
