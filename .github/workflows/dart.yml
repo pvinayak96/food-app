@@ -55,6 +55,5 @@ jobs:
              git remote add origin https://pvinayak96:${{ secrets.MY_ACCESS_TOKEN }}@github.com/pvinayak96/food-app.git
              git branch gh-pages
              git checkout gh-pages
-             git pull
-             git push
+             git push --set-upstream origin gh-pages
              
