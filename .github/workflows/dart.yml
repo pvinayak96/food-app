@@ -53,7 +53,7 @@ jobs:
              git add .
              git commit -m "deployment to pages"
              git clone https://pvinayak96:${{secrets.MY_TOKEN}}@github.com/pvinayak96/food-app.git
-             git pull
+             git pull origin master
              git checkout gh-pages
              git push
              
